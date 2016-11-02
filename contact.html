@@ -84,7 +84,20 @@
                 </div>
                 <div class="col-md-8">
                     <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com.ph/maps/place/Session+Rd,+Baguio,+Benguet/@16.4107585,120.5973465,17z/data=!3m1!4b1!4m5!3m4!1s0x3391a143f39b8633:0xb7f9a3af67d3793e!8m2!3d16.4107585!4d120.5995352"></iframe>
+                    <div id="map" style="width:100%;height:500px"></div>
+
+                    <script>
+                    function myMap() {
+                      var mapCanvas = document.getElementById("map");
+                      var mapOptions = {
+                        center: new google.maps.LatLng(51.5, -0.2),
+                        zoom: 10
+                      }
+                      var map = new google.maps.Map(mapCanvas, mapOptions);
+                    }
+                    </script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
                 </div>
                 <div class="col-md-4">
                     <p>Phone:
